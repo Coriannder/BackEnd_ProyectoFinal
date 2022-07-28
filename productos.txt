@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "category": "torta",
+    "title": "Carrot cake",
+    "precio": 1800,
+    "pictureUrl": "https://picsum.photos/id/900/500/500",
+    "descripcion": "Pastel de zanahorias y almendras aromatizado con canela, vainilla, jengibre y nuez moscada, relleno y cubierto con frosting de queso, decorado con zanahoria cruda rallada y crocante de almendras."
+  },
+  {
+    "id": 2,
+    "category": "torta",
+    "title": "Torta de frutilla y chocolate",
+    "precio": 900,
+    "pictureUrl": "https://picsum.photos/id/25/500/500",
+    "descripcion": "Masa sablée de chocolate, rellena de curd de naranja, cubierta con frutillas frescas, gajos de naranja a vivo y coco."
+  }
+]
