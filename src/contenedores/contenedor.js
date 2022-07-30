@@ -35,9 +35,9 @@ class Contenedor{
         return this.id
     }
     getById(id){
-        let item = this.getAll().find(elem => elem.id === id)
-        if(item == undefined) item = false
-        return item;
+        let obj = this.getAll().find(elem => elem.id === id)
+        if(obj == undefined) item = false
+        return obj;
     }
 
     getRandom(){
@@ -68,6 +68,5 @@ class Contenedor{
 
     }
 }
-
 
 module.exports = {Contenedor}

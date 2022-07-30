@@ -2,18 +2,16 @@ const Router = require('express');
 const routerCarrito = Router();
 
 
-const {Contenedor} = require('../contenedor')
-const contenedorProductos = require('../routes/productos')
+const {Contenedor} = require('../src/contenedores/contenedor')
+//const contenedorProductos = require('../routes/productos')
 contenedorCarritos = new Contenedor('carritos.txt')
+
 
 contenedorCarritos.guardarItem(    // cargo un carrito de prueba
     [
-        {nombre: 'lapicera', descripcion: 'lapicera azul', codigo: 'lap01234', foto: 'http//kjdhlksugdli', precio: 500, stock: 10 },
-        {nombre: 'regla', descripcion: 'regla transparente', codigo: 'lap01235', foto: 'http//kugytoulksugdli', precio: 650, stock: 10 }
+        {id: 1, nombre: 'lapicera', descripcion: 'lapicera azul', codigo: 'lap01234', foto: 'http//kjdhlksugdli', precio: 500, stock: 10 },
+        {id: 2, nombre: 'regla', descripcion: 'regla transparente', codigo: 'lap01235', foto: 'http//kugytoulksugdli', precio: 650, stock: 10 }
     ])
-
-
-
 
 routerCarrito.post('/', (req,res)=>{            // Genera carrito y devuelve su id
     const id = contenedorCarritos.guardarItem() // Guarda un item (en este caso un carrito vacio) y entrega su id
@@ -32,7 +30,7 @@ routerCarrito.delete('/:id', (req,res)=>{       // Elimina un carrito por su id
 routerCarrito.get('/:id/productos', (req,res)=>{  // Muestra Los productos de un carrito encontrado por su id
     const carrito = contenedorCarritos.getById(Number(req.params.id))
     if(carrito){
-        res.json(carrito.item)
+        res.json(carrito)
     }else{res.send('Carrito no encontrado')}
   
 })
